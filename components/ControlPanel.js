@@ -32,7 +32,7 @@ export default function ControlPanel({ scale, setScale, selectedFile, setSelecte
         <label>
           Dataset:
           <select value={selectedFile} onChange={handleFileChange}>
-          <option value="pca_output_small.json">pca_output_small test</option>
+          <option value="pca_output_small.json">pca_output_small test2</option>
             <option value="tsne_output.json">t-SNE Output</option>
             <option value="pca_output.json">PCA Output</option>
             <option value="pca_output_MSE.json">PCA MSE Output</option>
