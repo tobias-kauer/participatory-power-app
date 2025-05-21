@@ -15,7 +15,7 @@ function ImageSprite({ position, imageUrl, scale = 1 }) {
   );
 }
 
-export default function ImageSpriteCloud({ scale, selectedFile }) {
+export default function ImageSpriteCloud({ scale, selectedFile, speed, maxPoints  }) {
   const [sprites, setSprites] = useState([]);
   const groupRef = useRef(); // Reference for the entire group
 
@@ -29,14 +29,16 @@ export default function ImageSpriteCloud({ scale, selectedFile }) {
   // Rotate the entire group slowly
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.001; // Adjust the speed of rotation here
+      groupRef.current.rotation.y += speed; // Adjust the speed of rotation here
     }
   });
+
+  const displayedSprites = sprites.slice(0, Math.min(maxPoints, sprites.length));
 
   return (
     <group ref={groupRef}>
       {/* Render Sprites */}
-      {sprites.map((item, index) => (
+      {displayedSprites.map((item, index) => (
         <ImageSprite
           key={index}
           position={item.position}
