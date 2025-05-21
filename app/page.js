@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function Home() {
   // State for scale and selected dataset
   const [scale, setScale] = useState(1);
-  const [selectedFile, setSelectedFile] = useState('pca_output.json');
+  const [selectedFile, setSelectedFile] = useState('pca_output_small.json');
 
   return (
     <main style={{ position: 'relative' }}>
